@@ -1,3 +1,7 @@
+# A biblioteca glibc 2.28 apresenta um bug que compromente o funcionamento do Octave 5.1.0.
+# Caso o programa encerre ao iniciar, por conta de leituras indevidas do teclado, reinicie o Octave.
+# Referência https://savannah.gnu.org/bugs/?55854
+
 clear all
 clc
 

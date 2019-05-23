@@ -25,39 +25,12 @@ switch(escolha)
       [LP,UP,PP] = lu(P)
       save LUP.mat
     endif
-    
-    figure(1);
-    spy(P);
-    title ("Matriz esparça plat362");
-    
-    figure(2);
-    spy(LP);
-    title ("Matriz L");
-    legend ("Observe o preenchimento da matriz");
-    
-    figure(3);
-    spy(UP);
-    title ("Matriz esparça U");
-    legend ("Observe o preenchimento da matriz");
-    
-    printf("Avançar e fechar janelas?(Pressione alguma tecla)");
-    escolha = kbhit();
-    
-    
-    b = P*ones(rows(P),1);
-    printf("\nCalculando o vetor x por x = A\b\n");
-    printf("Avançar?(Pressione alguma tecla)");
-    escolha = kbhit();
-    XP = P\b
-    
-    printf("Avançar?(Pressione alguma tecla)");
-    escolha = kbhit();
-    
-    printf("Questão c)\n");
-    cond(P)
+    A = P;
+    L = LP;
+    U = UP;
+    p = PP;
     
   case '2'
-    
     if (valoresCarregados == 0)
       load "SuiteSparse Matrix Collection/hor_131"
 
@@ -71,36 +44,10 @@ switch(escolha)
       [LH,UH,PH] = lu(H)
       save LUH.mat
     endif
-    
-    figure(1);
-    spy(H);
-    title ("Matriz esparça hor_131");
-    
-    figure(2);
-    spy(LH);
-    title ("Matriz L");
-    legend ("Observe o preenchimento da matriz");
-    
-    figure(3);
-    spy(UH);
-    title ("Matriz esparça U");
-    legend ("Observe o preenchimento da matriz");
-    
-    printf("Avançar e fechar janelas?(Pressione alguma tecla)");
-    escolha = kbhit();
-    
-    b = H*ones(rows(H),1);
-    printf("\nCalculando o vetor x por x = A\b\n");
-    printf("Avançar?(Pressione alguma tecla)");
-    escolha = kbhit();
-    XP = H\b
-    
-    printf("Avançar?(Pressione alguma tecla)");
-    escolha = kbhit();
-    
-    printf("\nQuestão c)\n");
-    cond(H)
-    
+    A = H;
+    L = LH;
+    U = UH;
+    p = PH;
   case '3'
     
     if (valoresCarregados == 0)
@@ -118,36 +65,45 @@ switch(escolha)
       [LR,UR,PR] = lu(R)
       save LUR.mat
     endif
-    
-    figure(1);
-    spy(R);
-    title ("Matriz esparça rail_5177");
-    
-    figure(2);
-    spy(LR);
-    title ("Matriz L");
-    legend ("Observe o preenchimento da matriz");
-    
-    figure(3);
-    spy(UR);
-    title ("Matriz esparça U");
-    legend ("Observe o preenchimento da matriz");
-    
-    printf("Avançar e fechar janelas?(Pressione alguma tecla)");
-    escolha = kbhit();
-    
-    b = R*ones(rows(R),1);
-    printf("\nCalculando o vetor x por x = A\b\n");
-    printf("Avançar?(Pressione alguma tecla)");
-    escolha = kbhit();
-    XP = R\b
-    
-    printf("Avançar?(Pressione alguma tecla)");
-    escolha = kbhit();
-    
-    printf("Questão c)\n");
-    cond(R)
-    
+    A = R;
+    L = LR;
+    U = UR;
+    p = PR;
   otherwise
     continue
 endswitch
+
+# LETRA A) ################################################
+figure(1);
+spy(A);
+title ("Matriz esparça plat362");
+
+figure(2);
+spy(L);
+title ("Matriz L");
+legend ("Observe o preenchimento da matriz");
+
+figure(3);
+spy(U);
+title ("Matriz esparça U");
+legend ("Observe o preenchimento da matriz");
+
+printf("Avançar e fechar janelas?(Pressione alguma tecla)");
+escolha = kbhit();
+close all
+# LETRA B #################################################
+b = P*ones(rows(A),1);
+printf("\nCalculando o vetor x por x = A\b\n");
+printf("Avançar?(Pressione alguma tecla)");
+escolha = kbhit();
+x = A\b
+printf("Calcular norma?(Pressione alguma tecla)");
+escolha = kbhit();
+normA = norm((b- A*x)/b,inf)
+printf("Avançar?(Pressione alguma tecla)");
+escolha = kbhit();
+
+# LETRA C #################################################
+printf("Questão c)\n");
+cond(A)
+    
