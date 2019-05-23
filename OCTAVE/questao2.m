@@ -12,9 +12,9 @@ switch(escolha)
     
     load "SuiteSparse Matrix Collection/plat362"
 
-    A = Problem.A;
+    P = Problem.A;
 
-    b = A*ones(rows(A),1);
+    b = P*ones(rows(P),1);
     printf("\n\
     Escolha um método para resolver a matriz.\n\
     1 Jacobi\n\
@@ -27,15 +27,16 @@ switch(escolha)
     switch(escolha)
       case '1'
         % Resolve A por Jacobi
-        [XPJ,iterPj,resPJ] = jacobi(A,b,epsilon,niter);
+        
+        [XPJ,iterPj,resPJ] = jacobi(P,b,epsilon,niter);
         printf("O método de Gauss-Jacobi levou %d iterações.\n\r",iterPj);
       case '2'
         % Resolve A por Seidel
-        [XPS,iterPS,resPS] = sor(A,b,epsilon,niter,1);
+        [XPS,iterPS,resPS] = sor(P,b,epsilon,niter,1);
         printf("O método de Gauss-Seidel levou %d iterações.\n\r",iterPS);
       case '3'
         % Resolve A por SOR
-        [XPSOR,iterPSOR,resPSOR] = sor(A,b,epsilon,niter,w);
+        [XPSOR,iterPSOR,resPSOR] = sor(P,b,epsilon,niter,w);
         printf("O método SOR levou %d iterações.\n\r",iterPSOR);
      otherwise
        continue
@@ -44,9 +45,9 @@ switch(escolha)
     
     load "SuiteSparse Matrix Collection/hor_131"
 
-    A = Problem.A;
+    H = Problem.A;
 
-    b = A*ones(rows(A),1);
+    b = H*ones(rows(H),1);
     printf("\n\
     Escolha um método para resolver a matriz.\n\
     1 Jacobi\n\
@@ -59,15 +60,15 @@ switch(escolha)
     switch(escolha)
       case '1'
         % Resolve A por Jacobi
-        [XHJ,iterHJ,resHJ] = jacobi(A,b,epsilon,niter);
+        [XHJ,iterHJ,resHJ] = jacobi(H,b,epsilon,niter);
         printf("O método de Gauss-Jacobi levou %d iterações.\n\r",iterHJ);
       case '2'
         % Resolve A por Seidel
-        [XHS,iterHS,resHS] = sor(A,b,epsilon,niter,1);
+        [XHS,iterHS,resHS] = sor(H,b,epsilon,niter,1);
         printf("O método de Gauss-Seidel levou %d iterações.\n\r",iterHS);
       case '3'
         % Resolve A por SOR
-        [XHSOR,iterHSOR,resHSOR] = sor(A,b,epsilon,niter,w);
+        [XHSOR,iterHSOR,resHSOR] = sor(H,b,epsilon,niter,w);
         printf("O método SOR levou %d iterações.\n\r",iterHSOR);
     otherwise
       continue
@@ -76,9 +77,9 @@ switch(escolha)
     
     load "SuiteSparse Matrix Collection/hor_131"
 
-    A = Problem.A;
+    R = Problem.A;
 
-    b = A*ones(rows(A),1);
+    b = R*ones(rows(R),1);
     printf("\n\
     Escolha um método para resolver a matriz.\n\
     1 Jacobi\n\
@@ -91,15 +92,15 @@ switch(escolha)
     switch(escolha)
       case '1'
         % Resolve A por Jacobi
-        [XRJ,iterRJ,resRJ] = jacobi(A,b,epsilon,niter);
+        [XRJ,iterRJ,resRJ] = jacobi(R,b,epsilon,niter);
         printf("O método de Gauss-Jacobi levou %d iterações.\n\r",iterRJ);
       case '2'
         % Resolve A por Seidel
-        [XRS,iterRS,resRS] = sor(A,b,epsilon,niter,1);
+        [XRS,iterRS,resRS] = sor(R,b,epsilon,niter,1);
         printf("O método de Gauss-Seidel levou %d iterações.\n\r",iterRS);
       case '3'
         % Resolve A por SOR
-        [XRSOR,iterHSOR,resRSOR] = sor(A,b,epsilon,niter,w);
+        [XRSOR,iterHSOR,resRSOR] = sor(R,b,epsilon,niter,w);
         printf("O método SOR levou %d iterações.\n\r",iterRSOR); 
     otherwise
       continue
