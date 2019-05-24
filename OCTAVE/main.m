@@ -9,9 +9,6 @@ addpath("codigos/")
 
 disp(ctime(time()))
 
-epsilon = 0.0001;
-niter = 10000;
-w = 0.5;
 rodarPrograma = 1;
 valoresCarregados = 0;
 
