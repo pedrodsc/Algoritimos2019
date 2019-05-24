@@ -10,14 +10,14 @@
 % polinômios de grau 1 a 5. Os gráfico dos ajustes foram feitos a seguir.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-disp('1. Ajuste de Curvas: ajustando a tabela de dados armazenada no arquivo dados.txt com polin�mios de grau 1 a 5.');
-disp('Os dados de r2 e var de cada fun��o de ajuste aparecer�o na tela a seguir.');
+disp('1. Ajuste de Curvas: ajustando a tabela de dados armazenada no arquivo dados.txt com polinomios de grau 1 a 5.');
+disp('Os dados de r2 e var de cada funcao de ajuste aparecerao na tela a seguir.');
 disp(' ');
 
 load dados.txt
 [l,c] = size(dados);
 x = dados(1:l,1);
-y = dados(1:l,2);
+y = dados(1:l,2); 
 xi = linspace(2.60,3.1,15);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -112,8 +112,8 @@ plot(x,y,'*',xi,z3,";Grau 3;")
 xlabel('x'),ylabel('y = f(x)')
 title('Ajuste de curvas usando polinomios de graus 1 a 5')
 
-disp('Como o polin�mio de grau 3 permitiu assim a menor variancia residual, ele foi o escolhido para a nossa aproxima��o,');
-disp('ao substituir 2,8 volumes nesta equa��o teremos uma boa estimativa para a fun��o.');
+disp('Como o polinomio de grau 3 permitiu assim a menor variancia residual, ele foi o escolhido para a nossa aproxima��o,');
+disp('ao substituir 2,8 volumes nesta equacao teremos uma boa estimativa para a funcao.');
 fprintf('\n');
 fprintf('p3(2.8) = %3.2f*(2.8)^3 %3.2f*(2.8)^2 +%3.2f*(2.8) %3.2f\n', p3(1), p3(2), p3(3), p3(4));
 fprintf('\n');
