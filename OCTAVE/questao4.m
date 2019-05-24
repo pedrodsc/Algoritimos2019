@@ -54,13 +54,6 @@ disp(' Substituindo o valor de [S] como 7 temos: ');
 disp(' ');
 Presult = (7*Vm)/( Ks + 7)
 
-j = 0:0.1:10;
-k = 5.257*j/( 86.226 + j)
-%l= sin(x);
-hold on
-plot(j,k)
-%plot(j,l)
-hold off
 disp(' ');
 disp('Como a função do segundo caso é v = Vm[S]²/(Ks² + [S]²) precisamos de um');
 disp('Plano intermediário onde essa função seria linear na forma c = ax + b. ');
