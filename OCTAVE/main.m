@@ -30,7 +30,7 @@ while (rodarPrograma)
   escolha = kbhit();
   disp(escolha);
   if escolha == '1'
-    load variaveis.mat
+    load variaveis2.mat
     load LUP.mat
     load LUH.mat
     load LUR.mat

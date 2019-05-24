@@ -25,6 +25,7 @@ switch(escolha)
       [LP,UP,PP] = lu(P)
       save LUP.mat
     endif
+    titulo = "Matriz esparça plat362";
     A = P;
     L = LP;
     U = UP;
@@ -44,6 +45,7 @@ switch(escolha)
       [LH,UH,PH] = lu(H)
       save LUH.mat
     endif
+    titulo = "Matriz esparça hor_131";
     A = H;
     L = LH;
     U = UH;
@@ -65,6 +67,7 @@ switch(escolha)
       [LR,UR,PR] = lu(R)
       save LUR.mat
     endif
+    titulo = "Matriz esparça rail_5177";
     A = R;
     L = LR;
     U = UR;
@@ -76,7 +79,7 @@ endswitch
 # LETRA A) ################################################
 figure(1);
 spy(A);
-title ("Matriz esparça plat362");
+title (titulo);
 
 figure(2);
 spy(L);
@@ -92,18 +95,17 @@ printf("Avançar e fechar janelas?(Pressione alguma tecla)");
 escolha = kbhit();
 close all
 # LETRA B #################################################
-b = P*ones(rows(A),1);
+b = A*ones(rows(A),1);
 printf("\nCalculando o vetor x por x = A\b\n");
 printf("Avançar?(Pressione alguma tecla)");
 escolha = kbhit();
 x = A\b
-printf("Calcular norma?(Pressione alguma tecla)");
+printf("Calcular norma?(Pressione alguma tecla)\n");
 escolha = kbhit();
 normA = norm((b- A*x)/b,inf)
-printf("Avançar?(Pressione alguma tecla)");
+printf("Avançar?(Pressione alguma tecla)\n");
 escolha = kbhit();
 
 # LETRA C #################################################
-printf("Questão c)\n");
+printf("Calculando o condicionamento da matriz.\n");
 cond(A)
-    
