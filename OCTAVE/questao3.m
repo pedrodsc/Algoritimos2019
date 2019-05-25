@@ -10,6 +10,7 @@
 % polinômios de grau 1 a 5. Os gráfico dos ajustes foram feitos a seguir.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+disp("\nTerceira questão - Ajuste de curvas")
 disp('1. Ajuste de Curvas: ajustando a tabela de dados armazenada no arquivo dados.txt com polinomios de grau 1 a 5.');
 disp('Os dados de r2 e var de cada funcao de ajuste aparecerao na tela a seguir.');
 disp(' ');

@@ -28,6 +28,7 @@ function [x,iter,res] = jacobi(A,b,tol,nmaxiter)
       err = res(iter);       
       x0 = x;	   
     endwhile;
+    printf("Solução após %d iterações\n",iter);
     toc;
 endfunction;
      

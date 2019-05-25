@@ -31,9 +31,6 @@ function [x,iter,res] = sor(A,b,tol,nmaxiter,w)
     err = res(iter);
     x0 = x;	    
   endwhile;
+  printf("Solução após %d iterações\n",iter);
   toc;
 endfunction;
-    
-    
-    
-    

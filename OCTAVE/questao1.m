@@ -10,6 +10,7 @@ printf("\n\
   Qual matriz você deseja carregar?(Padrão=Retorna): ");
 escolha = kbhit();
 disp(escolha);
+disp("--------------------------------------------------------")
 switch(escolha)
   case '1'
     if (valoresCarregados == 0)
@@ -23,9 +24,8 @@ switch(escolha)
         continue
       endif
       [LP,UP,PP] = lu(P)
-      save LUP.mat
     endif
-    titulo = "Matriz esparça plat362";
+    titulo = "Matriz esparsa original plat362";
     A = P;
     L = LP;
     U = UP;
@@ -43,9 +43,9 @@ switch(escolha)
         continue
       endif
       [LH,UH,PH] = lu(H)
-      save LUH.mat
+
     endif
-    titulo = "Matriz esparça hor_131";
+    titulo = "Matriz esparsa original hor_131";
     A = H;
     L = LH;
     U = UH;
@@ -65,9 +65,8 @@ switch(escolha)
         continue
       endif
       [LR,UR,PR] = lu(R)
-      save LUR.mat
     endif
-    titulo = "Matriz esparça rail_5177";
+    titulo = "Matriz esparsa original rail_5177";
     A = R;
     L = LR;
     U = UR;
@@ -77,35 +76,60 @@ switch(escolha)
 endswitch
 
 # LETRA A) ################################################
-figure(1);
+disp("\nItem a)\n")
+##figure(1);
+figure(1, 'position',[100,200,1000,600]);
+subplot(1,3,1);
 spy(A);
 title (titulo);
 
-figure(2);
+##figure(2);
+subplot(1,3,2);
 spy(L);
 title ("Matriz L");
-legend ("Observe o preenchimento da matriz");
+##legend ("Observe o preenchimento da matriz");
 
-figure(3);
+##figure(3);
+subplot(1,3,3);
 spy(U);
-title ("Matriz esparça U");
-legend ("Observe o preenchimento da matriz");
+title ("Matriz U");
+##legend ("Observe o preenchimento da matriz");
 
-printf("Avançar e fechar janelas?(Pressione alguma tecla)");
+disp("É possível observar que as matrizes L e U apresentam um número maior de elementos não nulos");
+printf("\nAvançar e fechar janelas?(Pressione alguma tecla)\n");
 escolha = kbhit();
+disp("--------------------------------------------------------")
 close all
 # LETRA B #################################################
+disp("\nItem b)")
 b = A*ones(rows(A),1);
-printf("\nCalculando o vetor x por x = A\b\n");
-printf("Avançar?(Pressione alguma tecla)");
+printf("\nCalculando a solução do sistema por x = A\\b\n");
+printf("\nCalcular?(Pressione alguma tecla)\n");
 escolha = kbhit();
 x = A\b
-printf("Calcular norma?(Pressione alguma tecla)\n");
+disp("A norma do resíduo é calculada para saber a exatidão da solução encontrada.\
+ Idealmente seu valor é zero.")
+printf("\nAvaçar e calcular a norma do resíduo?(Pressione alguma tecla)\n");
 escolha = kbhit();
-normA = norm((b- A*x)/b,inf)
-printf("Avançar?(Pressione alguma tecla)\n");
+normA = norm((b- A*x)/b,inf);
+printf("\nResposta: %f\n",normA);
+
+printf("\nAvançar?(Pressione alguma tecla)\n");
+disp("--------------------------------------------------------")
 escolha = kbhit();
 
 # LETRA C #################################################
-printf("Calculando o condicionamento da matriz.\n");
+disp("\nItem c)\n")
+
+disp("\nUm sistema mal condicionado é um sistema em que pequenas modifica̧cões nos\n\
+coeficientes do sistema resultam  em  grandes modificacões na solução.\n\
+Isso é um problema, pois os computadores apresentam precisão finita e uma modificação\n\
+pode ser gerada por arredondamento.\n\
+O cálculo do condicionamento da matriz pode ser feito pelo produto da norma da matriz\n\
+pela norma de sua inversa. Menores valores indicam um sistema melhor condicionada.\n");
+
+printf("\nCalculando o condicionamento da matriz.\n");
 cond(A)
+printf("\nAvançar?(Pressione alguma tecla)\n");
+disp("--------------------------------------------------------")
+escolha = kbhit();
