@@ -1,0 +1,478 @@
+%% abtex2-modelo-trabalho-academico.tex, v-1.9.5 laurocesar
+%% Copyright 2012-2015 by abnTeX2 group at http://www.abntex.net.br/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://www.abntex.net.br/
+%%
+%% This work consists of the files abntex2-modelo-trabalho-academico.tex,
+%% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
+% mestrado e trabalhos monograficos em geral) em conformidade com 
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\documentclass[
+% -- opções da classe memoir --
+12pt,				% tamanho da fonte
+%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+oneside,			% para impressão em verso e anverso. Oposto a oneside (página em branco = twoside)
+a4paper,			% tamanho do papel. 
+% -- opções da classe abntex2 --
+%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+% -- opções do pacote babel --
+english,			% idioma adicional para hifenização
+french,				% idioma adicional para hifenização
+spanish,			% idioma adicional para hifenização
+brazil				% o último idioma é o principal do documento
+]{abntex2}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{tabularx}
+\newcommand{\cmark}{\ding{51}}%
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}				% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}			% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}			% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}				% Usado pela Ficha catalográfica
+\usepackage{indentfirst}			% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}					% Controle das cores
+\usepackage{graphicx}				% Inclusão de gráficos
+\usepackage{microtype} 				% para melhorias de justificação
+\usepackage{gensymb}				% Graus Celsius, graus
+\usepackage{multicol}				% Multiplas colunas
+\usepackage[table,xcdraw]{xcolor}	% Cor na tabela
+\usepackage{subcaption}				% Várias figuras
+\usepackage{textcomp}				% \textdegree
+\usepackage{float}					% Posicionar figuras
+\usepackage{url}
+\usepackage{grffile}
+\usepackage{gensymb}
+\usepackage{relsize}
+% ---
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+%\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+%\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[num]{abntex2cite}	% Citações padrão ABNT
+% [num] = citação numérica
+% [alf] = citação com nome e ano
+
+% LOCAL DOS ARQUIVOS
+%\graphicspath{/home/pedrovdsc/AVES/Relatorio eletrica melhorado}
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+%\renewcommand{\backref}{}
+% Define os textos da citação
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%		Nenhuma citação no texto.%
+%	\or
+%		Citado na página #2.%
+%	\else
+%		Citado #1 vezes nas páginas #2.%
+%	\fi}%
+% ---
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGP}{\begingroup % Create the command for including the title page in the document
+	\centering % Center all text
+	\vspace*{\baselineskip} % White space at the top of the page
+	
+	\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
+	\rule{\textwidth}{0.4pt}\\[\baselineskip] % Thin horizontal line
+	
+	{\LARGE EXPERIMENTO II \\ [0.3\baselineskip] CUBA ELETROLÍTICA}\\[0.2\baselineskip] % Title
+	
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
+	\rule{\textwidth}{1.6pt}\\[\baselineskip] % Thick horizontal line
+	
+	\scshape % Small caps
+	%Talvez tentar fazer uma capa mais bonita \\ % Tagline(s) or further description
+	%presented  in a clear and useable way \\[\baselineskip] % Tagline(s) or further description
+	Vitória,  2018\par % Location and year
+	
+	\vspace*{7\baselineskip} % Whitespace between location/year and editors
+	
+	Aluno
+	
+    {\large Pedro Vinicius dos Santos Custodio\par}
+   \vspace*{2\baselineskip}
+	Professora \\[\baselineskip]
+	{\large Márcia Helena \par}
+	\vfill
+	{\itshape Universidade Federal do Espírito Santo \\ Curso de Enegnharia Elétrica\par} % Editor affiliation
+	% Whitespace between editor names and publisher logo
+	
+	% COMENTÁRIO \includegraphics[scale = 0.15]{logo.pdf} \\
+	%\plogo \\[0.3\baselineskip] % Publisher logo
+	%{\scshape 2012} \\[0.3\baselineskip] % Year published
+	% Publisher
+	
+	\endgroup}
+
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+	%pagebackref=true,
+	pdftitle={\@title}, 
+	pdfauthor={\@author},
+	pdfsubject={\imprimirpreambulo},
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=blue,
+	bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+	
+	% Seleciona o idioma do documento (conforme pacotes do babel)
+	%\selectlanguage{english}
+	\selectlanguage{brazil}
+	
+	% Retira espaço extra obsoleto entre as frases.
+	\frenchspacing 
+	
+	% ----------------------------------------------------------
+	% ELEMENTOS PRÉ-TEXTUAIS
+	% ----------------------------------------------------------
+	% \pretextual
+	
+	% ---
+	% Capa
+	% ---
+	%\imprimircapa
+	\titleGP		% Capa que "fiz"
+	% ---
+	
+	% ---
+	% Folha de rosto
+	% (o * indica que haverá a ficha bibliográfica)
+	% ---
+	%\imprimirfolhaderosto*
+	% ---
+	
+	% ---
+	% Inserir a ficha bibliografica
+	% ---
+	
+	% ---
+	
+	% ---
+	% RESUMOS
+	% ---
+	
+	% resumo em português
+	\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+	%\begin{resumo}
+	% O documento aborda a aplicação da mecânica dos fluidos na análise do escoamento sanguíneo. Primeiro, há uma visão geral sobre a fisiologia da circulação. Seguido por propostas de modelos para análise do escoamento. E finalizando com as doenças relacionadas à má condição do sangue e dos vasos sanguíneos.
+	
+	% \textbf{Palavras-chave}: hemodinâmica. sangue. sanguíneo. %escoamento. fluido. aterosclerose. estenose. bio.
+	%\end{resumo}
+	
+	% resumo em inglês
+	%\begin{resumo}[Abstract]
+	% \begin{otherlanguage*}{english}
+	%   This is the english abstract.
+	
+	%   \vspace{\onelineskip}
+	
+	%   \noindent 
+	%   \textbf{Keywords}: latex. abntex. text editoration.
+	% \end{otherlanguage*}
+	%\end{resumo}
+	
+	
+	% ---
+	% inserir lista de ilustrações
+	% ---
+	\pdfbookmark[0]{\listfigurename}{lof}
+	%\listoffigures*
+	\cleardoublepage
+	% ---
+	
+	% ---
+	% inserir lista de tabelas
+	% ---
+	%\pdfbookmark[0]{\listtablename}{lot}
+	%\listoftables*
+	%\cleardoublepage
+	% ---
+	
+	% ---
+	% inserir lista de abreviaturas e siglas
+	% ---
+	%\begin{siglas}
+	%  \item[ABNT] Associação Brasileira de Normas Técnicas
+	%  \item[abnTeX] ABsurdas Normas para TeX
+	%\end{siglas}
+	% ---
+	
+	% ---
+	% inserir lista de símbolos
+	% ---
+
+% ---
+
+% ---
+% INSERIR O SUMÁRIO
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+\settocdepth{section}	% Define o nível do sumário, no caso até 		%						"section"
+% ---
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+
+\chapter{Aparato Experimental}
+\begin{itemize}
+\large
+\item 1 Bacia plástica transparente com água
+
+\item 2 eletrodos
+
+\item 1 Multimetro
+
+\item 1 Fonte de bancada
+
+\item 1 Papel milimetrado
+
+\end{itemize}
+\normalsize
+\chapter{Introdução}
+
+O experimento teve como objetivo mostrar na prática a relação entre o campo elétrico e o pontecial elétrico estudados em sala.
+
+\chapter{Campo Elétrico e Potencial Elétrico}
+
+O potencial elétrico é definido como o trabalho por unidade de carga necessário para trazer uma carga ${\mathbf q}$ de ${\mathbf \infty}$ até o um ponto ${\mathbf P}$. Por isso a unidade $\frac{J}{C}$ ou $Volt$, em homenagem a Alessandro Volta.
+
+É simples verificar a relação entre o campo e o potencial elétrico fazendo a analise dimensional dos dois. As unidades do campo elétrico e do potencial elétrico são, respectivamente, $\frac{N}{C}$, $\frac{J}{C}$. Lembrando que $J = N.m$, é instantaneo que o potencial elétrico é o trabalho necessário para deslocar uma carga na presença de um campo elétrico.
+
+Também é possível relacionar os dois algebricamente.
+Sabe-se que,
+\begin{equation}
+    \label{eq:campoEletrico}
+    \vec{E} = \frac{Q \cdot \vec{r}}{4\pi\varepsilon_{0}r^{2}}
+\end{equation}
+
+\begin{equation}
+    \label{eq:potencialEletrico}
+    V = \frac{Q}{4\pi\varepsilon_{0}r}
+\end{equation}
+
+Derivando $V$ em relação a $r$ obtem-se,
+
+\begin{equation}
+    \label{eq:derivadaPotencialEletrico}
+    \frac{dV}{dr} = \frac{-Q}{4\pi\varepsilon_{0}r^{2}}
+\end{equation}
+
+Multiplicando \autoref{eq:derivadaPotencialEletrico} por $\vec{-r}$,
+
+\begin{equation}
+    \label{eq:derivadaComR}
+    \frac{-dV}{dr}\cdot\vec{r} = \frac{Q \cdot \vec{r}}{4\pi\varepsilon_{0}r^{2}}
+\end{equation}
+
+Da \autoref{eq:campoEletrico} e a \autoref{eq:derivadaComR} tem-se,
+
+\begin{equation}
+    \label{eq:campoEletrico}
+    \vec{E} = \frac{-dV}{dr}\cdot\vec{r}
+\end{equation}
+
+Portanto, o campo elétrico é menos o gradiente da tensão.
+
+\chapter{Calculando o campo elétrico}
+
+A equação \autoref{eq:derivadaComR} nos oferece uma ótima forma de calcular o campo elétrico.
+
+\chapter{Precedimento}
+
+No papel milimetrado foram desenhados pontos, que serviram de guia para onde deveriam ser feitas as medições. Foram 10 linhas igualmente espaçadas e 14 colunas também igualmente espaçadas. Totalizando 140 pontos.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=1\linewidth]{procedimento.jpg}
+		\caption{Fluxograma de aquisição de dados}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
+As saídas positiva e negativa da fonte foram ligadas a um eletrodo cada. Os eletrodos ficavam na borda da bacia e parcialmente imersos na água. A fonte foi ajustada para fornecer 30V um máximo de 1A.
+
+No terminal negativo da fonte, foi colocada a referência do multimetro.
+
+O experimento foi dividido em 2 partes, onde a primeira consistiu em medir e anotar as tensões em todos os 140 pontos marcados.
+
+A segunda parte do experimento consistiu em encontrar linhas equipotenciais, ou seja, de mesmo potencial elétrico. Foram definidas 3 tensões, 7,5V, 15V e 22,5V. Após encontrar uma dessas tensões na cuba eletrlítica, era necessário movimentar a ponta de prova para verticalmente e horizontalmente para encontrar outro ponto próximo de igual tensão.
+
+\chapter{Resultados}
+
+Os dados obtidos na primeira parte do experimento foram analisados no Matlab usando o \textit{script} fornecido pela professora.
+
+A figura abaixo representa a tensão como uma função $V(x,y)$
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=1\linewidth]{tensao no ponto2.png}
+		\caption{Superfície gerada por $V(x,y)$}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
+As regiões próximas as placas possuem maior variação de tensão e no centro a variação é bem mais constante, sendo quase linear.
+
+\pagebreak
+O \textit{script} também calcula o gradiente da tensão, por consequência, o campo elétrico(\autoref{eq:derivadaComR}), e as linhas equipotenciais.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=1\linewidth]{gradiente.png}
+		\caption{Gradiente de tensão e linhas de campo elétrico}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
+É possível observar que as linhas de campo elétrico são de fato perpendiculares às linhas equipotenciais e que são mais uniformes em sentido e módulo no sentro da cuba.
+\pagebreak
+
+Para observar melhor as linhas de campo elétrico e o gradiente de tensão, foi feita uma sobreposição da imagem gerada pelo \textit{script} e de um foto do experimento.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=1\linewidth]{gradiente sobreposto.jpg}
+		\caption{Gradiente sobreposto no experimento}
+		\label{gradienteSobreposto}
+	\end{center}
+\end{figure}
+
+Com as imagens sobrepostas, fica mais fácil observar as linhas de campo elétrico divergindo do polo positivo e convergindo para o polo negativo. As linhas equipotenciais também ficam mais evidentes. No centro da cuba elas são mais retas, resultado esperado após a segunda parte do experimento, em que era mais fácil encontrar linhas equipotenciais, pois bastava andar verticalmente com a ponta de prova.
+
+É interessante observar a semelhança do sistema com um dipolo gerado por cargas pontuais, mesmo com a grande dimensão das placas em comparação à distância entre elas.
+
+Apesar de ser possível observar a semelhança anteriormente dita, também é possível observar no centro das placas as linhas de campo normais às superfícies das placas e o efeito de borda nas suas laterais. Como seria esperado numa placa de grande dimensão.
+
+\chapter{Conclusão}
+
+Com o experimento foi possível observar na prática a relação entre o campo elétrico e o potencial elétrico.
+Duas coisas saltaram dentre as outras que foram possíveis de serem observadas: as linhas equipotenciais e a semelhança dos resultados obtidos com o de um dipolo gerado por cargas pontuais.
+\iffalse
+	
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=1\linewidth]{{fluxograma}.pdf}
+		\caption{Fluxograma de aquisição de dados}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+\fi
+
+
+
+% ----------------------------------------------------------
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ----------------------------------------------------------
+%\phantompart
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+\end{document}
+
