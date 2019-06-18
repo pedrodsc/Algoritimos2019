@@ -9,8 +9,8 @@ w = 1;
 
 # Item 4. do trabalho usando para testar o programa com uma função conhecida.
 
-hx = 1;
-hy = 1;
+hx = 0.5;
+hy = 0.5;
 
 a = -1/hx*hx;
 b = a;
@@ -65,7 +65,7 @@ figure(3)
 mesh(xx,yy,(xx.*(10-xx).*yy.*(5-yy))/10)
 title("V(x,y)")
 
-F = -(xx.*(10-xx)+yy.*(5-yy))/5
+F = -(xx.*(10-xx)+yy.*(5-yy))/5;
 
 ## Condições de contorno
 ## V = 0 na fronteira do retângulo
@@ -76,6 +76,8 @@ b = F'(:);
 [x,iter,res] = sor(A,b,tol,nmaxiter,w);
 zz = reshape(x,nx,ny)';
 
+
 figure(4)
 mesh(xx,yy,zz)
 title("Teste")
+
