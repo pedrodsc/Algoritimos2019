@@ -2,9 +2,10 @@ clear
 clc
 
 graphics_toolkit("gnuplot")
+##graphics_toolkit("qt")
 
-tol = 0.001;
-nmaxiter = 100;
+tol = 0.000001;
+nmaxiter = 1000;
 w = 1;
 
 # Item 4. do trabalho usando para testar o programa com uma função conhecida.
@@ -12,11 +13,11 @@ w = 1;
 hx = 0.5;
 hy = 0.5;
 
-a = -1/hx*hx;
+a = -1/hx^2;
 b = a;
-c = -1/hy*hy;
+c = -1/hy^2;
 d = c;
-e = -2*(1/hx*hx + 1/hy*hy);
+e = 2*(1/hx^2 + 1/hy^2);
 
 intervalX = [0,10];
 intervalY = [0,5];
@@ -25,8 +26,7 @@ nx = (intervalX(2) - intervalX(1))/hx+1;
 ny = (intervalY(2) - intervalY(1))/hy+1;
 
 n = nx*ny;
-A = zeros(n,n);
-
+A = sparse(n);
 x = linspace(intervalX(1),intervalX(2),nx);
 y = linspace(intervalY(1),intervalY(2),ny);
 
@@ -52,32 +52,43 @@ for i = (1:n-nx)
   A(i+nx,i) = d;
 endfor
 
-figure(1)
-spy(A)
-title("spy(A)")
-
 # F(x,y)
-figure(2)
+figure(3)
 mesh(xx,yy,(xx.*(10-xx)+yy.*(5-yy))/5)
 title("F(x,y)")
 # V(x,y)
-figure(3)
-mesh(xx,yy,(xx.*(10-xx).*yy.*(5-yy))/10)
+figure(2)
+vv = (xx.*(10-xx).*yy.*(5-yy))/10;
+mesh(xx,yy,vv)
 title("V(x,y)")
-
-F = -(xx.*(10-xx)+yy.*(5-yy))/5;
 
 ## Condições de contorno
 ## V = 0 na fronteira do retângulo
 ## V = 0.625x(10-x) y = 2.5, 0 < x < 10
 
-b = F'(:);
+F = (xx.*(10-xx)+yy.*(5-yy))/5;
+g = F';
 
-[x,iter,res] = sor(A,b,tol,nmaxiter,w);
-zz = reshape(x,nx,ny)';
+## Condições de contorno
 
+# Borda em 0
+#                         | x1 y1 x2 y2 
+[A,g] = carga_linear(A,g,0 ,1 ,1 ,1 ,ny ,nx,ny); 
+[A,g] = carga_linear(A,g,0 ,1 ,1 ,nx,1  ,nx,ny);
+[A,g] = carga_linear(A,g,0 ,1 ,ny,nx,ny ,nx,ny);
+[A,g] = carga_linear(A,g,0 ,nx,1 ,nx,ny ,nx,ny);
+
+[v,iter,res] = sor(A,g,tol,nmaxiter,w);
+#[x,iter,res] = sor2(A,g,nx,ny,tol,nmaxiter,w);
+zz = reshape(v,nx,ny)';
+
+erro = max(vv(:)-zz(:))
+erro_s = mat2str(erro)
+figure(3)
+mesh(xx,yy,zz)
+title("V(x,y) calculado")
+legend(strcat("Erro = ",erro_s))
 
 figure(4)
-mesh(xx,yy,zz)
-title("Teste")
-
+[dx,dy] = gradient(zz);
+mesh(xx,yy,-dx-dy)
