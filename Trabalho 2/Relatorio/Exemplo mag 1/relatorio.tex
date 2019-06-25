@@ -353,7 +353,7 @@ e $n_x$ e $n_y$ são os números de pontos nas direções x e y.
 
 Para h = 0.125 temos que o $\omega$ ideal é de 1.8856.
 
-Utilizando o  método SOR com $\omega$ = 1.8856 para encontrar a solução com h = 0.125, foi encontrado que levou 162 iterações para convergir com uma tolerância de $10^{-6}$ com  o tempo de execução de 26.0348 seconds.
+Utilizando o  método SOR com $\omega$ = 1.8856 para encontrar a solução com h = 0.125, foi encontrado que levou 162 iterações para convergir com uma tolerância de $10^{-6}$ com  o tempo de execução de 26.0348 segundos.
 
 
 
@@ -444,7 +444,26 @@ Como se pode observar, as condições de contorno estão atendidas e a tensão n
 	\end{center}
 \end{figure}
 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=0.8\linewidth]{potencial_shading.png}
+		\caption{Potencial variando com a cor}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
+
 Pela imagem, percebemos que existem regiões elípticas que possuem o mesmo potencial, o que pode-se notar ao fazer cortes horizontais em diferentes alturas no gráfico de tensão do capacitor, e o gradiente mostrando a forma de como a tensão vai aumentando de acordo com a região. As setas sempre vão se aproximando de y = 3 porque o contorno informa que essa região possui tensão de +5V com x variando de 3 a 7 e, as setas sempre vão se afastando de y = 2 porque o contorno informa que essa região possui tensão de -5V com x variando de 3 a 7. Mostrando assim um resultado coerente com o esperado.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=1\linewidth]{intensidade_de_campo_eletrico.png}
+		\caption{Intensidade do campo elétrico no capacitor}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
 
 
 \chapter{Resultados}
