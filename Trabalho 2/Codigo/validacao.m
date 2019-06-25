@@ -5,13 +5,13 @@ graphics_toolkit("gnuplot")
 ##graphics_toolkit("qt")
 
 tol = 0.000001;
-nmaxiter = 1000;
+nmaxiter = 10000;
 w = 1;
 
 # Item 4. do trabalho usando para testar o programa com uma função conhecida.
 
-hx = 0.5;
-hy = 0.5;
+hx = 0.5
+hy = 0.5
 
 a = -1/hx^2;
 b = a;
@@ -24,6 +24,9 @@ intervalY = [0,5];
 
 nx = (intervalX(2) - intervalX(1))/hx+1;
 ny = (intervalY(2) - intervalY(1))/hy+1;
+
+t = cos(pi/nx) + cos(pi/ny);
+w = (8 - sqrt(64 - 16*t^2))/t^2
 
 n = nx*ny;
 A = sparse(n);
@@ -52,16 +55,6 @@ for i = (1:n-nx)
   A(i+nx,i) = d;
 endfor
 
-# F(x,y)
-figure(3)
-mesh(xx,yy,(xx.*(10-xx)+yy.*(5-yy))/5)
-title("F(x,y)")
-# V(x,y)
-figure(2)
-vv = (xx.*(10-xx).*yy.*(5-yy))/10;
-mesh(xx,yy,vv)
-title("V(x,y)")
-
 ## Condições de contorno
 ## V = 0 na fronteira do retângulo
 ## V = 0.625x(10-x) y = 2.5, 0 < x < 10
@@ -82,8 +75,21 @@ g = F';
 #[x,iter,res] = sor2(A,g,nx,ny,tol,nmaxiter,w);
 zz = reshape(v,nx,ny)';
 
+# Desenhos
+
+# F(x,y)
+figure(1)
+mesh(xx,yy,(xx.*(10-xx)+yy.*(5-yy))/5)
+title("F(x,y)")
+# V(x,y)
+figure(2)
+vv = (xx.*(10-xx).*yy.*(5-yy))/10;
+mesh(xx,yy,vv)
+title("V(x,y)")
+
 erro = max(vv(:)-zz(:))
 erro_s = mat2str(erro)
+
 figure(3)
 mesh(xx,yy,zz)
 title("V(x,y) calculado")
@@ -91,4 +97,5 @@ legend(strcat("Erro = ",erro_s))
 
 figure(4)
 [dx,dy] = gradient(zz);
-mesh(xx,yy,-dx-dy)
+mesh(xx,yy,sqrt(dx.^2+dy.^2))
+title("Gradiente")

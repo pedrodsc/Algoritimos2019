@@ -10,8 +10,8 @@ w = 1;
 
 # Item 4. do trabalho usando para testar o programa com uma função conhecida.
 
-hx = 0.2;
-hy = 0.2;
+hx = 0.25
+hy = 0.25
 
 a = -1/hx^2;
 b = a;
@@ -24,6 +24,9 @@ intervalY = [0,5];
 
 nx = (intervalX(2) - intervalX(1))/hx+1
 ny = (intervalY(2) - intervalY(1))/hy+1
+
+t = cos(pi/nx) + cos(pi/ny);
+w = (8 - sqrt(64 - 16*t^2))/t^2
 
 n = nx*ny
 A = sparse(n);
@@ -97,25 +100,30 @@ ylabel("Y")
 figure(3)
 contour(xx,yy,zz,-5:5)
 hold on
-quiver(xx,yy,dx,dy,'b')
+quiver(xx,yy,-dx,-dy,'b')
 title("Gradiente")
 xlabel("X")
 ylabel("Y")
 plot((3:7),2*ones(5,1),'b')
 plot((3:7),3*ones(5,1),'r')
 
+hold off
 
 figure(4)
 colormap("rainbow");
 pcolor(xx,yy,sqrt(dx.*dx + dy.*dy))
 shading interp;
 hold on
-quiver(xx,yy,dx,dy,'b')
-plot((3:7),2*ones(5,1),'b')
 plot((3:7),3*ones(5,1),'r')
+plot((3:7),2*ones(5,1),'b')
+quiver(xx,yy,-1.5*dx,-1.5*dy,'b')
+axis([-.5, 10.5, -.5, 5.5])
 title("Intensidade do Campo Elétrico")
 xlabel("X")
 ylabel("Y")
+grid off
+
+hold off
 
 figure(5)
 colormap("jet");
