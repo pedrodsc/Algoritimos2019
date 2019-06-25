@@ -332,7 +332,7 @@ com as seguintes condições de contorno:
 \begin{center}
 V = 0 na fronteira. 
 
-V = 0.625x(10-x) para  y = 2.5,  0$\leq $ x$\leq $  10 
+V = 0.625x(10-x) para  y = 2.5,  0 $\leq $ x $\leq $  10 
 \end{center}
 
 Onde solução conhecida é igual a:
@@ -345,13 +345,35 @@ V(x,y) = $\frac{1}{10}$x(10-x)y(5-y)
 A partir daí, foi implementado um código computacional no Octave a fim de resolver este problema.
 
 Para saber se o código está correto, foi calculado o erro máximo entre a solução conhecida e a solução encontrada. Ela pode ser encontrada a partir da seguinte fórmula.
-erro = max|Vpexato-Vp|, p = 1,2,...,nx*ny
+\begin{center} erro = max|$V_p^{exato}$-$V_p$|, p = 1,2, ... ,$n_x$*$n_y$\end{center}
 
-Utilizando o  método de Gauss-Seidel para encontrar a solução, foi encontrado que levou 232 iterações para convergir com uma tolerância de 10-6.
+Utilizando o  método de Gauss-Seidel para encontrar a solução, foi encontrado que levou 232 iterações para convergir com uma tolerância de $10^{-6}$.
+\newpage
 
-\chapter{Precedimento}
 
-No papel milimetrado foram desenhados pontos, que serviram de guia para onde deveriam ser feitas as medições. Foram 10 linhas igualmente espaçadas e 14 colunas também igualmente espaçadas. Totalizando 140 pontos.
+
+
+Para h= 0.125, temos:
+\begin{center}
+\includegraphics[clip, , width=0.6\linewidth]{validacao_f_h125.png}
+
+\includegraphics[clip, , width=0.6\linewidth]{validacao_v_h125.png}
+
+\includegraphics[clip, , width=0.6\linewidth]{validacao_v_calculado_h125.png}
+\end{center}
+
+\chapter{Capacitor de placas paralelas}
+
+Para um capacitor de placas paralelas, no domínio $\ohm$  = [0,10] $\times$ [0,5], livre de cargas ($\rho$ = 0) e com as condições de contorno:
+
+\begin{center}
+V = 0 na fronteira. 
+
+V = +5 para  y = 3,  3 $\leq $ x $\leq $  7
+
+V = -5 para  y = 2,  3 $\leq $ x $\leq $  7
+ 
+\end{center} 
 
 \begin{figure}[H]
 	\begin{center}
