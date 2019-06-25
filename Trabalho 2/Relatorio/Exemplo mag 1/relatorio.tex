@@ -303,21 +303,7 @@ brazil				% o último idioma é o principal do documento
 \textual
 
 
-\chapter{Aparato Experimental}
-\begin{itemize}
-\large
-\item 1 Bacia plástica transparente com água
 
-\item 2 eletrodos
-
-\item 1 Multimetro
-
-\item 1 Fonte de bancada
-
-\item 1 Papel milimetrado
-
-\end{itemize}
-\normalsize
 \chapter{Introdução}
 
 Neste relatório iremos apresentar a resolução da Equação de Poisson pelo método de diferenças finitas centrais, validando com uma solução já conhecida e resolvendo um problema da área de eletromagnetismo com a solução a ser encontrada pelo método.
@@ -353,7 +339,7 @@ Utilizando o  método de Gauss-Seidel para encontrar a solução com h = 0.250, 
 
 Utilizando o  método de Gauss-Seidel para encontrar a solução com h = 0.500, foi encontrado que levou 232 iterações para convergir com uma tolerância de $10^{-6}$ com o tempo de execução de 0.0969028 seconds.
 
-Quanto menor o h, maior o tempo de execução pois o gráfico se torna mais fidedigno a realidade e precisa de um maior número de iterações pois a quantidade de pontos a ser calculado aumenta.
+Quanto menor o h, maior o tempo de execução pois o gráfico se torna mais fidedigno a realidade e precisa de um maior número de iterações pois a quantidade de pontos a serem calculados aumenta.
 
 Em geral, a escolha do $\omega$ para o método SOR é feita empiricamente, mas em malhas retangulares pode ser encontrada a partir da seguinte fórmula:
 
@@ -362,6 +348,8 @@ Em geral, a escolha do $\omega$ para o método SOR é feita empiricamente, mas e
 onde
 
 \begin{center}t = cos($\frac{\pi}{n_x}$)+cos($\frac{\pi}{n_y}$)\end{center}
+
+e $n_x$ e $n_y$ são os números de pontos nas direções x e y.
 
 Para h = 0.125 temos que o $\omega$ ideal é de 1.8856.
 
@@ -375,16 +363,40 @@ Utilizando o  método SOR com $\omega$ = 1.8856 para encontrar a solução com h
 
 
 
-Para h= 0.125, temos:
-\begin{center}
-\includegraphics[clip, , width=0.6\linewidth]{validacao_f_h125.png}
+Para h= 0.125, temos os seguintes gráficos:
 
-\includegraphics[clip, , width=0.6\linewidth]{validacao_v_h125.png}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=0.5\linewidth]{validacao_f_h125.png}
+		\caption{Função f(x,y) com h = 0.125}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
 
-\includegraphics[clip, , width=0.6\linewidth]{validacao_v_calculado_h125.png}
-\end{center}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=0.5\linewidth]{validacao_v_h125.png}
+		\caption{Função V(x,y) com h = 0.125}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=0.5\linewidth]{validacao_v_calculado_h125.png}
+		\caption{Função V(x,y) calculada com h = 0.125}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
+
+
+
 
 \chapter{Capacitor de placas paralelas}
+
+Agora que sabemos que o nosso código está validado, utilizamos em um problema com solução até então desconhecida. O problema está a seguir.
 
 Para um capacitor de placas paralelas, no domínio $\ohm$  = [0,10] $\times$ [0,5], livre de cargas ($\rho$ = 0) e com as condições de contorno:
 
@@ -394,12 +406,37 @@ V = 0 na fronteira.
 V = +5 para  y = 3,  3 $\leq $ x $\leq $  7
 
 V = -5 para  y = 2,  3 $\leq $ x $\leq $  7
- 
 \end{center} 
+
+Foi escolhido para resolver o problema h = 0.125.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[clip, , width=1\linewidth]{procedimento.jpg}
+		\includegraphics[clip, , width=0.8\linewidth]{capacitor_V_h_125.png}
+		\caption{Visão da tensão no capacitor em uma perspectiva 1}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=0.8\linewidth]{capacitor_2_V_h_125.png}
+		\caption{Visão da tensão no capacitor em uma perspectiva 2}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=0.8\linewidth]{capacitor_3_V_h_125.png}
+		\caption{Visão da tensão no capacitor em uma perspectiva 3}
+		\label{fluxograma}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=0.5\linewidth]{procedimento.jpg}
 		\caption{Fluxograma de aquisição de dados}
 		\label{fluxograma}
 	\end{center}
