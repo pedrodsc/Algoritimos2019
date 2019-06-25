@@ -347,16 +347,27 @@ A partir daí, foi implementado um código computacional no Octave a fim de reso
 Para saber se o código está correto, foi calculado o erro máximo entre a solução conhecida e a solução encontrada. Ela pode ser encontrada a partir da seguinte fórmula.
 \begin{center} erro = max|$V_p^{exato}$-$V_p$|, p = 1,2, ... ,$n_x$*$n_y$\end{center}
 
-Utilizando o  método de Gauss-Seidel para encontrar a solução, foi encontrado que levou 232 iterações para convergir com uma tolerância de $10^{-6}$.
+Utilizando o  método de Gauss-Seidel para encontrar a solução com h = 0.125, foi encontrado que levou 232 iterações para convergir com uma tolerância de $10^{-6}$ com  o tempo de execução de 490.569 seconds.
 
-Para h = 0.125, após 3725 iterações o tempo de execução foi de 490.569 seconds.
+Utilizando o  método de Gauss-Seidel para encontrar a solução com h = 0.250, foi encontrado que levou 931 iterações para convergir com uma tolerância de $10^{-6}$ com o tempo de execução de 5.4899 seconds.
 
-Para h = 0.250, após 931 iterações o tempo de execução foi de 5.4899 seconds.
-
-Para h = 0.500, após 232 iterações o tempo de execução foi de 0.0969028 seconds.
-
+Utilizando o  método de Gauss-Seidel para encontrar a solução com h = 0.500, foi encontrado que levou 232 iterações para convergir com uma tolerância de $10^{-6}$ com o tempo de execução de 0.0969028 seconds.
 
 Quanto menor o h, maior o tempo de execução pois o gráfico se torna mais fidedigno a realidade e precisa de um maior número de iterações pois a quantidade de pontos a ser calculado aumenta.
+
+Em geral, a escolha do $\omega$ para o método SOR é feita empiricamente, mas em malhas retangulares pode ser encontrada a partir da seguinte fórmula:
+
+\begin{center}$\omega$ =  $\frac{8-\sqrt{64-16t^2}}{t^2}$\end{center}
+
+onde
+
+\begin{center}t = cos($\frac{\pi}{n_x}$)+cos($\frac{\pi}{n_y}$)\end{center}
+
+Para h = 0.125 temos que o $\omega$ ideal é de 1.8856.
+
+Utilizando o  método SOR com $\omega$ = 1.8856 para encontrar a solução com h = 0.125, foi encontrado que levou 162 iterações para convergir com uma tolerância de $10^{-6}$ com  o tempo de execução de 26.0348 seconds.
+
+
 
 
 \newpage
