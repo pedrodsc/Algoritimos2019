@@ -351,7 +351,12 @@ Para a validação do código, foi calculado o erro máximo entre a solução co
 
 \section{Encontrando a Solução}
 
-\textbf{*Tem que explicar o SOR antes*}
+
+O Método de Sobre-Relaxação Sucessiva (Successive Over-Relaxation - SOR) é um melhoramento do método de Gauss-Seidel para a solução de sistemas de equações lineares. A relação de recorrência do método é:
+
+\begin{center}$x_i^{(k)} = (1 - \omega)x_i^{(k-1)} + \frac{\omega}{a_ii}[b_i - \sum_{j=1}^{i-1} a_{ij} x_j^{(k)}-\sum_{j=i+1}^{n}a_{ij} x_j^{(k-1)}$\end{center}
+
+Onde o termo $\omega$ pode acelerar a convergência para a solução do sistema.
 
 Foi então implementado um código no Octave a fim de resolver este problema.
 
