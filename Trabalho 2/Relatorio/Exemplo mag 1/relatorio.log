@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (prelo
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"cuba eletrolítica.tex"
-(./cuba eletrolítica.tex
+**relatorio.tex
+(./relatorio.tex
 LaTeX2e <2018-12-01>
 (/usr/share/texmf-dist/tex/latex/abntex2/abntex2.cls
 Document Class: abntex2 2016/02/26 v-1.9.6 abnTeX2
@@ -1013,13 +1013,31 @@ LaTeX Info: Redefining \newblock on input line 591.
 LaTeX Info: Redefining \cite on input line 862.
 \ABCItoken=\toks33
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 176.
-\"cuba eletrolítica"@idxfile=\write4
-\openout4 = `"cuba eletrolítica.idx"'.
+Package hyperref Info: Option `colorlinks' set `true' on input line 178.
+\relatorio@idxfile=\write4
+\openout4 = `relatorio.idx'.
 
 
-Writing index file "cuba eletrolítica".idx 
-(./cuba eletrolítica.aux
+Writing index file relatorio.idx 
+(./relatorio.aux
+
+LaTeX Warning: Label `fluxograma' multiply defined.
+
+
+LaTeX Warning: Label `fluxograma' multiply defined.
+
+
+LaTeX Warning: Label `fluxograma' multiply defined.
+
+
+LaTeX Warning: Label `fluxograma' multiply defined.
+
+
+LaTeX Warning: Label `fluxograma' multiply defined.
+
+
+LaTeX Warning: Label `fluxograma' multiply defined.
+
 
 LaTeX Warning: Label `fluxograma' multiply defined.
 
@@ -1027,36 +1045,36 @@ LaTeX Warning: Label `fluxograma' multiply defined.
 LaTeX Warning: Label `fluxograma' multiply defined.
 
 )
-\openout1 = `"cuba eletrolítica.aux"'.
+\openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 199.
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 199.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 199.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 201.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 201.
 
  (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 199.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 199.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 201.
 
 (/usr/share/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring ON on input line 199.
+Package hyperref Info: Link coloring ON on input line 201.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1068,18 +1086,18 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 199.
-LaTeX Info: Redefining \ref on input line 199.
-LaTeX Info: Redefining \pageref on input line 199.
-LaTeX Info: Redefining \nameref on input line 199.
-LaTeX Info: Redefining \degres on input line 199.
-LaTeX Info: Redefining \dots on input line 199.
-LaTeX Info: Redefining \up on input line 199.
+LaTeX Info: Redefining \nameref on input line 201.
+LaTeX Info: Redefining \ref on input line 201.
+LaTeX Info: Redefining \pageref on input line 201.
+LaTeX Info: Redefining \nameref on input line 201.
+LaTeX Info: Redefining \degres on input line 201.
+LaTeX Info: Redefining \dots on input line 201.
+LaTeX Info: Redefining \up on input line 201.
 \myptabbox=\box62
 \myptabboxwidth=\skip264
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 199.
+(lastpage)             ! on input line 201.
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count266
@@ -1110,7 +1128,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 199.
+LaTeX Info: Redefining \microtypecontext on input line 201.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1127,15 +1145,15 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 )
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/lmr/m/n --> TS1/lmr/bx/n on input line 199.
-Package gensymb Info: Math companion symbols declared on input line 199.
-LaTeX Info: Redefining \degree on input line 199.
-LaTeX Info: Redefining \celsius on input line 199.
+(Font)                  TS1/lmr/m/n --> TS1/lmr/bx/n on input line 201.
+Package gensymb Info: Math companion symbols declared on input line 201.
+LaTeX Info: Redefining \degree on input line 201.
+LaTeX Info: Redefining \celsius on input line 201.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 199.
-LaTeX Info: Redefining \ohm on input line 199.
-Package gensymb Info: Using \textohm for \ohm on input line 199.
-Package gensymb Info: Using \textmu for \micro on input line 199.
+erthousand on input line 201.
+LaTeX Info: Redefining \ohm on input line 201.
+Package gensymb Info: Using \textohm for \ohm on input line 201.
+Package gensymb Info: Using \textmu for \micro on input line 201.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -1148,7 +1166,7 @@ Package microtype Info: Character `029' is missing
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 293.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 295.
 
  (/usr/share/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1158,7 +1176,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-(./cuba eletrolítica.toc
+(./relatorio.toc
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 7.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1211,54 +1229,88 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ] [4
 
-] [5
+] [5]
+<validacao_f_h125.png, id=53, 421.575pt x 316.18124pt>
+File: validacao_f_h125.png Graphic file (type png)
+<use validacao_f_h125.png>
+Package pdftex.def Info: validacao_f_h125.png  used on input line 372.
+(pdftex.def)             Requested size: 227.5pt x 170.62918pt.
+<validacao_v_h125.png, id=55, 421.575pt x 316.18124pt>
+File: validacao_v_h125.png Graphic file (type png)
+<use validacao_v_h125.png>
+Package pdftex.def Info: validacao_v_h125.png  used on input line 381.
+(pdftex.def)             Requested size: 227.5pt x 170.62918pt.
+<validacao_v_calculado_h125.png, id=57, 421.575pt x 316.18124pt>
+File: validacao_v_calculado_h125.png Graphic file (type png)
+<use validacao_v_calculado_h125.png>
+Package pdftex.def Info: validacao_v_calculado_h125.png  used on input line 389
+.
+(pdftex.def)             Requested size: 227.5pt x 170.62918pt.
+ [6 <./validacao_f_h125.png (PNG copy)> <./validacao_v_h125.png (PNG copy)> <./
+validacao_v_calculado_h125.png (PNG copy)>]
+<capacitor_V_h_125.png, id=69, 779.91376pt x 553.31718pt>
+File: capacitor_V_h_125.png Graphic file (type png)
+<use capacitor_V_h_125.png>
+Package pdftex.def Info: capacitor_V_h_125.png  used on input line 417.
+(pdftex.def)             Requested size: 364.00139pt x 258.24388pt.
+<capacitor_2_V_h_125.png, id=71, 779.91376pt x 553.31718pt>
+File: capacitor_2_V_h_125.png Graphic file (type png)
+<use capacitor_2_V_h_125.png>
+Package pdftex.def Info: capacitor_2_V_h_125.png  used on input line 425.
+(pdftex.def)             Requested size: 364.00139pt x 258.24388pt.
+ [7
 
-]
-<procedimento.jpg, id=49, 963.6pt x 721.94719pt>
+ <./capacitor_V_h_125.png (PNG copy)>]
+<capacitor_3_V_h_125.png, id=81, 779.91376pt x 553.31718pt>
+File: capacitor_3_V_h_125.png Graphic file (type png)
+<use capacitor_3_V_h_125.png>
+Package pdftex.def Info: capacitor_3_V_h_125.png  used on input line 433.
+(pdftex.def)             Requested size: 364.00139pt x 258.24388pt.
+<procedimento.jpg, id=83, 963.6pt x 721.94719pt>
 File: procedimento.jpg Graphic file (type jpg)
 <use procedimento.jpg>
-Package pdftex.def Info: procedimento.jpg  used on input line 358.
-(pdftex.def)             Requested size: 455.0pt x 340.89052pt.
- [6
-
- <./procedimento.jpg>] [7]
-<tensao no ponto2.png, id=63, 421.575pt x 316.18124pt>
+Package pdftex.def Info: procedimento.jpg  used on input line 441.
+(pdftex.def)             Requested size: 227.5pt x 170.43974pt.
+ [8 <./capacitor_2_V_h_125.png (PNG copy)> <./capacitor_3_V_h_125.png (PNG copy
+)>]
+[9 <./procedimento.jpg>]
+<tensao no ponto2.png, id=99, 421.575pt x 316.18124pt>
 File: tensao no ponto2.png Graphic file (type png)
 <use tensao no ponto2.png>
-Package pdftex.def Info: tensao no ponto2.png  used on input line 380.
+Package pdftex.def Info: tensao no ponto2.png  used on input line 463.
 (pdftex.def)             Requested size: 455.0pt x 341.25838pt.
- [8
+ [10
 
  <./tensao no ponto2.png>]
 
-LaTeX Warning: Reference `eq:derivadaComR' on page 9 undefined on input line 38
-9.
+LaTeX Warning: Reference `eq:derivadaComR' on page 11 undefined on input line 4
+72.
 
-<gradiente.png, id=75, 421.575pt x 316.18124pt>
+<gradiente.png, id=109, 421.575pt x 316.18124pt>
 File: gradiente.png Graphic file (type png)
 <use gradiente.png>
-Package pdftex.def Info: gradiente.png  used on input line 393.
+Package pdftex.def Info: gradiente.png  used on input line 476.
 (pdftex.def)             Requested size: 455.0pt x 341.25838pt.
-[9 <./gradiente.png>]
-<gradiente sobreposto.jpg, id=85, 963.6pt x 721.94719pt>
+[11 <./gradiente.png>]
+<gradiente sobreposto.jpg, id=119, 963.6pt x 721.94719pt>
 File: gradiente sobreposto.jpg Graphic file (type jpg)
 <use gradiente sobreposto.jpg>
-Package pdftex.def Info: gradiente sobreposto.jpg  used on input line 406.
+Package pdftex.def Info: gradiente sobreposto.jpg  used on input line 489.
 (pdftex.def)             Requested size: 455.0pt x 340.89052pt.
- [10 <./gradiente sobreposto.jpg>]
+ [12 <./gradiente sobreposto.jpg>]
 
 AED: lastpage setting LastPage
-[11
+[13
 
 ]
 \tf@toc=\write5
-\openout5 = `"cuba eletrolítica.toc"'.
+\openout5 = `relatorio.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 460.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 460.
- (./cuba eletrolítica.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 460.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 460.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 543.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 543.
+ (./relatorio.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 543.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 543.
 
 
 LaTeX Warning: There were undefined references.
@@ -1266,32 +1318,35 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 543.
  ) 
 Here is how much of TeX's memory you used:
- 16129 strings out of 492623
- 242968 string characters out of 6135669
- 414491 words of memory out of 5000000
- 19691 multiletter control sequences out of 15000+600000
- 60123 words of font info for 84 fonts, out of 8000000 for 9000
+ 16147 strings out of 492623
+ 243456 string characters out of 6135669
+ 416483 words of memory out of 5000000
+ 19708 multiletter control sequences out of 15000+600000
+ 56472 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,12n,40p,444b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,12n,40p,433b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fo
-nts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.
-enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-d
-ist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/lm/
+nts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit
+.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist
+/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf-dist/fonts/type1/public/lm/
 lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share
 /texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1
-/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></u
-sr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/font
-s/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.
-pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-d
-ist/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf-dist/fonts/type1/public/
-lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on "cuba eletrolítica.pdf" (11 pages, 623447 bytes).
+/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></u
+sr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/font
+s/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr17.
+pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dis
+t/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/l
+mri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/t
+exmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><
+/usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on relatorio.pdf (13 pages, 1686238 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 23661 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 222 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 21159 words of extra memory for PDF output out of 24883 (max. 10000000)
 

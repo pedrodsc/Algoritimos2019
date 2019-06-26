@@ -306,40 +306,76 @@ brazil				% o último idioma é o principal do documento
 
 \chapter{Introdução}
 
-Neste relatório iremos apresentar a resolução da Equação de Poisson pelo método de diferenças finitas centrais, validando com uma solução já conhecida e resolvendo um problema da área de eletromagnetismo com a solução a ser encontrada pelo método.
+Neste trabalho iremos apresentar a resolução da Equação de Poisson pelo método de diferenças finitas centrais, usando o método SOR para resolver o sistema obtido.
 
 \chapter{Validação do Método}
 
-Para validar o método, foi disponibilizado a função:
+\section{Função de validação}
+Para validar o método, foi utilizada uma função e uma condição de contorno com resposta já conhecida, assim foi possível validar o algoritomo e medir o erro entre a resposta conhecida e a calculada.
 
+Função de validação:
 \begin{center}f(x,y) = $\frac{1}{5}$[x(x-10)+y(y-5)]\end{center}
 
-com as seguintes condições de contorno:
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=0.5\linewidth]{validacao_f_h125.png}
+		\caption{Função f(x,y) com h = 0.125}
+		\label{f_validacao}
+	\end{center}
+\end{figure}
+
+Condições de contorno:
 \begin{center}
 V = 0 na fronteira. 
 
 V = 0.625x(10-x) para  y = 2.5,  0 $\leq $ x $\leq $  10 
 \end{center}
 
-Onde solução conhecida é igual a:
+O problema acima tem solução conhecida igual a:
 
 \begin{center}
-
 V(x,y) = $\frac{1}{10}$x(10-x)y(5-y)
 \end{center} 
 
-A partir daí, foi implementado um código computacional no Octave a fim de resolver este problema.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[clip, , width=0.5\linewidth]{validacao_v_h125.png}
+		\caption{Função V(x,y) com h = 0.125}
+		\label{v_validacao}
+	\end{center}
+\end{figure}
 
-Para saber se o código está correto, foi calculado o erro máximo entre a solução conhecida e a solução encontrada. Ela pode ser encontrada a partir da seguinte fórmula.
+Para a validação do código, foi calculado o erro máximo entre a solução conhecida e a solução encontrada. A seguinte fórmula foi usada para o cálculo do erro:
+
 \begin{center} erro = max|$V_p^{exato}$-$V_p$|, p = 1,2, ... ,$n_x$*$n_y$\end{center}
 
-Utilizando o  método de Gauss-Seidel para encontrar a solução com h = 0.125, foi encontrado que levou 232 iterações para convergir com uma tolerância de $10^{-6}$ com  o tempo de execução de 490.569 seconds.
+\section{Me ajuda com um nome pra cá}
 
-Utilizando o  método de Gauss-Seidel para encontrar a solução com h = 0.250, foi encontrado que levou 931 iterações para convergir com uma tolerância de $10^{-6}$ com o tempo de execução de 5.4899 seconds.
+\textbf{*Tem que explicar o SOR antes*}
 
-Utilizando o  método de Gauss-Seidel para encontrar a solução com h = 0.500, foi encontrado que levou 232 iterações para convergir com uma tolerância de $10^{-6}$ com o tempo de execução de 0.0969028 seconds.
+Foi então implementado um código no Octave a fim de resolver este problema.
 
-Quanto menor o h, maior o tempo de execução pois o gráfico se torna mais fidedigno a realidade e precisa de um maior número de iterações pois a quantidade de pontos a serem calculados aumenta.
+Utilizando o  método de Gauss-Seidel, SOR com $\omega = 1$, para encontrar a solução com tolerância de $10^{-6}$.
+Em todos os casos $h_{x} = h_{y}$.
+
+\begin{table}[H]
+	\centering
+	\caption{Soluções por Gauss-Seidel}
+	\label{tab:validacao_seidel}
+	\begin{tabular}{cccc}
+		\toprule
+		{\textbf{Passo da malha} }& {\textbf{Iterações}}& {\textbf{Tempo decorrido (s)}} & {\textbf{Erro}}   \\ \midrule
+		{$h$ = 0.500} & { 640 } & { 0.0969 } & { $9.369\cdot10^{-6}$ }    \\
+		{$h$ = 0.250} & { 931 } & { 5.4899 } & { $9.494\cdot10^{-6}$ }   \\
+		{$h$ = 0.125} & { 3725 } & { 490.569 } & { $9.598\cdot10^{-6}$ }   \\
+		\hline
+		
+	\end{tabular}
+\end{table}
+
+Vemos que quanto menor o $h$, mais fidedigno é o gráfico, pois temos mais pontos, porém isso acarreta em uma maior exigência computacional, porque temos mais pontos e o método precisa de um maior número de iterações para alcançar a solução com a precisão desejada.
+
+Para uma convergência mais rápida, o parâmetro $\omega$ pode ser ajustado.
 
 Em geral, a escolha do $\omega$ para o método SOR é feita empiricamente, mas em malhas retangulares pode ser encontrada a partir da seguinte fórmula:
 
@@ -351,47 +387,36 @@ onde
 
 e $n_x$ e $n_y$ são os números de pontos nas direções x e y.
 
-Para h = 0.125 temos que o $\omega$ ideal é de 1.8856.
+Os testes acima foram refeitos utilizando os valores ótimos de $\omega$ em cada situação.
 
-Utilizando o  método SOR com $\omega$ = 1.8856 para encontrar a solução com h = 0.125, foi encontrado que levou 162 iterações para convergir com uma tolerância de $10^{-6}$ com  o tempo de execução de 26.0348 segundos.
+\begin{table}[H]
+	\centering
+	\caption{Soluções por SOR}
+	\label{tab:validacao_seidel}
+	\begin{tabular}{cccc}
+		\toprule
+		{\textbf{Passo da malha} }& {\textbf{Iterações}}& {\textbf{Tempo decorrido (s)}} & {\textbf{$\omega$}}   \\ \midrule
+		{$h$ = 0.500} & { 41 } & { 0.0331311 } & { 1.6315 }    \\
+		{$h$ = 0.250} & { 81 } & { 0.526252 } & { 1.7880 }   \\
+		{$h$ = 0.125} & { 162 } & { 26.3311 } & { 1.8856 }   \\
+		\hline
+		
+	\end{tabular}
+\end{table}
 
+É evidente o efeito da escolha do valor de $\omega$ sobre o tempo de convergência. Com $h$ = 1.25, o número de iterações cai de 3725 para 162, uma melhora de 2200\%.
 
-
-
-\newpage
-
-
-
-
-Para h= 0.125, temos os seguintes gráficos:
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[clip, , width=0.5\linewidth]{validacao_f_h125.png}
-		\caption{Função f(x,y) com h = 0.125}
-		\label{fluxograma}
-	\end{center}
-\end{figure}
-
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[clip, , width=0.5\linewidth]{validacao_v_h125.png}
-		\caption{Função V(x,y) com h = 0.125}
-		\label{fluxograma}
-	\end{center}
-\end{figure}
+Para $h$ = 0.125, temos como resposta o seguinte gráfico:
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[clip, , width=0.5\linewidth]{validacao_v_calculado_h125.png}
 		\caption{Função V(x,y) calculada com h = 0.125}
-		\label{fluxograma}
+		\label{v_calculado}
 	\end{center}
 \end{figure}
 
-
-
+É possível observar que a figura \ref{v_calculado} é idêntica à figura \ref{v_validacao}.
 
 
 \chapter{Capacitor de placas paralelas}

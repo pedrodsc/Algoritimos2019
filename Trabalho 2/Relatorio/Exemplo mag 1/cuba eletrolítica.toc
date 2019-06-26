@@ -4,17 +4,15 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \changetocdepth {1}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Aparato Experimental}}{3}{chapter.1}
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Aparato Experimental}}{3}{chapter.1}% 
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Introdu\IeC {\c c}\IeC {\~a}o}}{4}{chapter.2}
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Introdu\IeC {\c c}\IeC {\~a}o}}{4}{chapter.2}% 
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Campo El\IeC {\'e}trico e Potencial El\IeC {\'e}trico}}{5}{chapter.3}
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Valida\IeC {\c c}\IeC {\~a}o do M\IeC {\'e}todo}}{5}{chapter.3}% 
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Calculando o campo el\IeC {\'e}trico}}{6}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Precedimento}}{6}{chapter.4}% 
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Precedimento}}{7}{chapter.5}
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Resultados}}{8}{chapter.5}% 
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Resultados}}{9}{chapter.6}
-\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase {Conclus\IeC {\~a}o}}{12}{chapter.7}
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Conclus\IeC {\~a}o}}{11}{chapter.6}% 
 \vspace {\cftbeforechapterskip }
